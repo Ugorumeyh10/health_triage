@@ -1,2 +1,3 @@
 // filepath: /Users/Ugorumeyh/Documents/tutorial/health_triage/.gitignore
 .env
+.vercel
