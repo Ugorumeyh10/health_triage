@@ -1,0 +1,24 @@
+{
+  "name": "health_triage",
+  "version": "1.0.0",
+  "description": "sickness diagnosis ai agent",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ugorumeyh10/health_triage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ugorumeyh10/health_triage/issues"
+  },
+  "homepage": "https://github.com/Ugorumeyh10/health_triage#readme",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
