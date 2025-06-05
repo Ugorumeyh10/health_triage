@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    background: #ffffff;
+    padding: 30px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: #f2f2f2;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    color: #d63031;
+    font-size: 2em;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+  
+  button {
+    background: #0984e3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .result {
+    background: #fff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+.analysis-section {
+    margin-top: 30px;
+}
+
+.diagnosis-container {
+    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.initial-statement, .next-steps-intro {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.diagnosis-section {
+    margin-bottom: 25px;
+}
+
+.diagnosis-section h3 {
+    color: #2c3e50; /* Dark blue-gray */
+    border-bottom: 2px solid #3498db; /* Primary blue */
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.diagnosis-card {
+    background-color: #ffffff;
+    border: 1px solid #d1d5da; /* Lighter gray border */
+    border-left: 4px solid #3498db; /* Primary blue accent */
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.diagnosis-card-title {
+    font-weight: bold;
+    color: #2980b9; /* Darker primary blue */
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.diagnosis-card-description {
+    font-size: 0.95em;
+    color: #34495e; /* Softer black */
+    line-height: 1.6;
+}
+
+.diagnosis-list {
+    list-style-type: disc; /* Or "circle" or "square" */
+    padding-left: 20px; /* Indent list items */
+    margin-top: 10px;
+}
+
+.diagnosis-list li {
+    padding: 6px 0;
+    color: #34495e;
+    line-height: 1.5;
+}
+
+.important-notice {
+    color: #e74c3c; /* Red for important notices */
+    font-weight: bold;
+}
+
+.conclusion-text h4 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+.conclusion-text p {
+    font-style: italic;
+    color: #555;
+}
+  

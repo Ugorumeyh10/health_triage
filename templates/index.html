@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HealthBot - AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>HealthBot 🏥</h1>
+    <form action="/analyze" method="post">
+      <label>Describe your symptoms:</label><br>
+      <textarea name="symptoms" placeholder="e.g. chest pain, sore throat, fever">{{ symptoms or '' }}</textarea><br>
+      <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <div class="analysis-section">
+            <h2>Analysis Result for: "{{ symptoms }}"</h2>
+            <div class="diagnosis-container">
+                {% if result is mapping %} {# Check if result is a dictionary (parsed structured data) #}
+                    {% if result.initial_statement %}
+                        <p class="initial-statement">{{ result.initial_statement }}</p>
+                    {% endif %}
+
+                    {% if result.possible_causes_intro or result.possible_causes %}
+                        <div class="diagnosis-section">
+                            <h3>Possible Causes</h3>
+                            {% for cause in result.possible_causes %}
+                                <div class="diagnosis-card">
+                                    <div class="diagnosis-card-title">{{ cause.title }}</div>
+                                    <div class="diagnosis-card-description">{{ cause.description }}</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if result.immediate_attention_header or result.immediate_attention_points %}
+                        <div class="diagnosis-section">
+                            <h3 class="important-notice">
+                                {{ result.immediate_attention_header if result.immediate_attention_header else "Seek Immediate Medical Attention If:" }}
+                            </h3>
+                            <ul class="diagnosis-list">
+                                {% for point in result.immediate_attention_points %}
+                                    <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    {% if result.other_steps_header or result.other_steps %}
+                        <div class="diagnosis-section">
+                            <h3>{{ result.other_steps_header if result.other_steps_header else "Otherwise, Take These Steps:" }}</h3>
+                            {% for step in result.other_steps %}
+                                <div class="diagnosis-card">
+                                    <div class="diagnosis-card-title">{{ step.title }}</div>
+                                    <div class="diagnosis-card-description">{{ step.description }}</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if result.conclusion %}
+                        <div class="diagnosis-section conclusion-text">
+                            <h4>Conclusion</h4>
+                            <p>{{ result.conclusion }}</p>
+                        </div>
+                    {% endif %}
+
+                {% elif result is string %} {# Fallback for raw string (e.g., error message or unparseable AI response) #}
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
